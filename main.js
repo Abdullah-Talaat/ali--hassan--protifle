@@ -120,18 +120,23 @@ function openModal(img, title = "", brief = "", review = "") {
   modalImg.src = img;
   modalTitle.textContent = title;
   modalBrief.textContent = brief;
-  modalReview.textContent =review;
+  modalReview.textContent = review;
   
-  modal.classList.add("show");
+  modal.classList.add("show"); // ✅ يظهر المودال أولاً
+  
+  const el = document.documentElement;
+  
 }
-
 /* ========= غلق المودال ========= */
-modalClose.onclick = () => modal.classList.remove("show");
+modalClose.onclick = closeModal;
 modal.onclick = (e) => {
-  if (e.target === modal) modal.classList.remove("show");
+  if (e.target === modal) closeModal();
 };
 
-/* ========= main ========= */
+function closeModal() {
+  modal.classList.remove("show");
+  
+}/* ========= main ========= */
 function showMain() {
   let html = "";
   
@@ -174,6 +179,25 @@ function getStaticImages(folder, count) {
   
   return html;
 }
+function getStaticVideos(folder, count) {
+  let html = "";
+  
+  for (let i = 1; i <= count; i++) {
+    const src = `/${folder}-${i}.jpg`;
+    
+    html += `
+      <div class="portfolio-item"
+        onclick="openModal('${src}')">
+        <video src="${src}">
+        </video>
+        <div class="overlay">View</div>
+      </div>
+    `;
+  }
+  
+  return html;
+}
+
 
 /* ========= الفلاتر ========= */
 document.querySelectorAll(".filter-btn").forEach(btn => {
@@ -189,5 +213,7 @@ document.querySelectorAll(".filter-btn").forEach(btn => {
     if (category === "logos") portfolio.innerHTML = getStaticImages("logos", 4);
     if (category === "ids") portfolio.innerHTML = getStaticImages("ids", 1);
     if (category === "posts") portfolio.innerHTML = getStaticImages("posts", 8);
+    if (category === "photography") portfolio.innerHTML = getStaticImages("photography", 1);
+    if (category === "videos") portfolio.innerHTML = getStaticVideos("videos", 8);
   };
 });

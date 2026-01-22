@@ -88,10 +88,12 @@ html {
         position: sticky;  
         top: 0;  
         z-index: 100;  
-        padding: 1rem 0;  
+        padding: 1rem 0;
         background-color: rgba(255, 255, 255, 0.8);  
         backdrop-filter: blur(10px);  
         border-bottom: 1px solid #eee;  
+        width: 100vw;
+        
     }  
       
     body.dark-mode .header {  
@@ -387,7 +389,7 @@ box-shadow: none;
     /* --- Responsive Design --- */  
     @media (max-width: 768px) {  
         .header .container {  
-            flex-direction: column;  
+              
             gap: 1rem;  
         }  
          .header .contact-info {  
@@ -753,14 +755,18 @@ body.dark-mode .tab {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
+    width:80vw;
 }
 
 .portfolio-item {
-    width: calc(33.333% - 1.5rem);
+    width: calc(25% - 1.5rem);
 }
 @media (max-width: 992px) {
   .portfolio-item {
     width: calc(50% - 1.5rem);
+  }
+  .name{
+      display: none;
   }
 }
 
