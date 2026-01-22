@@ -161,7 +161,7 @@ function getStaticImages(folder, count) {
   let html = "";
   
   for (let i = 1; i <= count; i++) {
-    const src = `/projects-photos/${folder}/${i}.jpg`;
+    const src = `/${folder}-${i}.jpg`;
     
     html += `
       <div class="portfolio-item"
