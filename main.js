@@ -1,5 +1,5 @@
 window.onload = () => {
-  
+  document.querySelectorAll("img").loading ="lazy"
   /* ========== THEME TOGGLE ========== */
   const themeToggle = document.getElementById("theme-toggle");
   
