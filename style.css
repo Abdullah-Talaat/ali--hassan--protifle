@@ -10,7 +10,7 @@
 
         --bg-dark: #18191a;  
         --surface-dark: #242526;  
-        --text-dark: #e4e6eb;  
+        --text-dark: #e4e6eb;
     }
 
 .material-symbols-outlined {
@@ -760,6 +760,7 @@ body.dark-mode .tab {
 
 .portfolio-item {
     width: calc(25% - 1.5rem);
+    height: fit-content;
 }
 @media (max-width: 992px) {
   .portfolio-item {
