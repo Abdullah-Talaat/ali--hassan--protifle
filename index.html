@@ -1,187 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html translate="no">
+
 <head>
-  <meta name="google-site-verification" content="kDvZTe-eLxwnx1HCKsJauStVwVNJLRY_IB9mbuehxis" />
-  <!-- Basic Meta -->
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- SEO Title -->
-  <title>Ali Hasan Elsharkawy | Graphic Designer, Photographer & Video Editor</title>
-
-  <!-- Meta Description -->
-  <meta name="description" content="Creative portfolio of Ali Hasan Elsharkawy showcasing graphic design, photography, and video editing projects with a modern artistic style.">
-
-  <!-- Keywords -->
-  <meta name="keywords" content="Ali Hasan Elsharkawy, Graphic Design, Photographer, Video Editor, Creative Portfolio, Branding, Photo Editing, Video Production">
-
-  <!-- Author -->
+    <meta name="google-site-verification" content="kDvZTe-eLxwnx1HCKsJauStVwVNJLRY_IB9mbuehxis" />
+  <!-- العنوان -->
+  <title>Ali Hasan Elsharkawy - Portfolio | Photography, Video & Graphic Design</title>
+  
+  <!-- الوصف -->
+  <meta name="description" content="Portfolio of Ali Hasan Elsharkawy, a young creative born in 2008. Explore photography, video editing, and graphic design projects.">
+  
+  <!-- الكلمات المفتاحية -->
+  <meta name="keywords" content="Ali Hasan Elsharkawy, portfolio, photography, video editing, graphic design, projects, creative, young designer">
+  
+  <!-- مؤلف الصفحة -->
   <meta name="author" content="Ali Hasan Elsharkawy">
-
-  <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
-  <meta property="og:title" content="Ali Hasan Elsharkawy | Creative Portfolio">
-  <meta property="og:description" content="Graphic Design, Photography, and Video Editing projects by Ali Hasan Elsharkawy.">
-  <meta property="og:image" content="https://ali-hassan-protifle.vercel.app/pro-ali.png">
-  <meta property="og:url" content="https://ali-hassan-protifle.vercel.app/">
+  
+  <!-- Open Graph لتحسين مشاركة الروابط -->
+  <meta property="og:title" content="Ali Hasan Elsharkawy - Portfolio">
+  <meta property="og:description" content="Explore the creative portfolio of Ali Hasan Elsharkawy: photography, video editing, and graphic design projects.">
+  <meta property="og:image" content="/pro-ali.png">
   <meta property="og:type" content="website">
-
+  <meta property="og:url" content="https://ali-hassan-protifle.vercel.app"> <!-- ضع رابط موقعك الفعلي -->
+  
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Ali Hasan Elsharkawy | Creative Portfolio">
-  <meta name="twitter:description" content="Graphic designer, photographer, and video editor showcasing creative projects.">
-  <meta name="twitter:image" content="https://ali-hassan-protifle.vercel.app/pro-ali.png">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+  <meta name="twitter:title" content="Ali Hasan Elsharkawy - Portfolio">
+  <meta name="twitter:description" content="Explore the creative portfolio of Ali Hasan Elsharkawy: photography, video editing, and graphic design projects.">
+  <meta name="twitter:image" content="/pro-ali.png">
+  
   <!-- Favicon -->
   <link rel="icon" href="/pro-ali.png" type="image/png">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- اللغة -->
+  <html lang="ar">
+  
+  <!-- مكتبة أيقونات -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
-
 <body>
-
-<header class="header surface">
-  <div class="container">
-
-    <!--<div class="name">
-      <span 
+  
+  <header class="header surface">
+    <div class="container">
+      <div class="controls">
+        <button id="theme-toggle" class="toggle-btn">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button id="lang-toggle" class="toggle-btn">
+        EN
+        </button>
+      </div>
+      <button class="burger" id="burger">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+    
+    <nav class="nav" id="nav">
+      <a href="#about" data-lang-en="About" data-lang-ar="عني">About</a>
+      <a href="#skills" data-lang-en="Skills" data-lang-ar="المهارات">Skills</a>
+      <a href="#portfolio1" data-lang-en="Portfolio" data-lang-ar="الأعمال">Portfolio</a>
+      <a href="#contact" data-lang-en="Contact" data-lang-ar="تواصل">Contact</a>
+    </nav>
+  </header>
+  
+  <main class="container">
+    
+    <section id="about" class="section">
+      <div class="pro-img">
+        <img src="/pro-ali.png" alt="Ali Hasan Avatar">
+      </div>
       
-        data-lang-en="WhatsApp: +20 122 072 8654 | Minya, Egypt"
-        data-lang-ar="واتساب: ٠١٢٢٠٧٢٨٦٥٤ | المنيا، مصر">
-        WhatsApp: +20 122 072 8654 | Minya, Egypt
-      </span>
-    </div>-->
+      <div class="surface">
+        <h2 data-lang-en="About Me" data-lang-ar="عني">About Me</h2>
+        <p id="typing-about" data-text-en="My name is Ali Hasan Elsharkawy, born in 2008. I have learned photography, videography, and graphic design, continuously improving my skills while working alongside my studies." data-text-ar="اسمي علي حسن الشرقاوي ، من مواليد 2008. لقد تعلمت التصوير الفوتوغرافي, بالفيديو, والتصميم الجرافيكي, تحسين مهاراتي باستمرار أثناء العمل جنبا إلى جنب مع دراستي..">
+        </p>
+      </div>
+    </section>
+    
+    <section id="skills" class="section">
+      <h2 data-lang-en="My Skills" data-lang-ar="مهاراتي">My Skills</h2>
+      <div class="skills-grid">
+        <span class="skill-item"><i class="fa-solid fa-video"></i> Video Editing</span>
+        <span class="skill-item"><i class="fa-solid fa-camera"></i> Photography</span>
+        <span class="skill-item"><i class="fa-solid fa-palette"></i> Graphic Design</span>
+      </div>
+    </section>
+    
+    <section id="portfolio1" class="section">
+      <h2 data-lang-en="My Work" data-lang-ar="أعمالي">My Work</h2>
+      <div id="portfolio2">
+        <div class="portfolio-filters">
+          <button class="filter-btn active" data-category="main" data-lang-ar="الاساس" data-lang-en="Main">Main</button>
+          <button class="filter-btn" data-category="logos" data-lang-ar="شعارات" data-lang-en="Logos">Logos</button>
+          <button class="filter-btn" data-category="posts" data-lang-ar="منشروات" data-lang-en="Posts">Posts</button>
+          <button class="filter-btn" data-category="photography" data-lang-ar="صور فوتوغرافية" data-lang-en="Photography">Photography</button>
+          <button class="filter-btn" data-category="videos" data-lang-ar="فديوهات" data-lang-en="Videos">Videos</button>
+          <button class="filter-btn" data-category="ids" data-lang-ar="بطاقات" data-lang-en="IDs">IDs</button>
+        </div>
+        <div class="portfolio-grid" id="portfolio"></div>
+      </div>
+    </section>
+    
+  </main>
+  
+  <section class="photo-s" id="photoS">
+    <img id="photoIm" src="" alt="">
+  </section>
+  
+  <footer id="contact" class="surface">
+    <div class="container">
+      <h2 data-lang-en="Get In Touch" data-lang-ar="تواصل معي">Get In Touch</h2>
+      <a href="https://wa.me/201220728654" target="_blank" class="whatsapp-btn" data-lang-ar="تواصل معي على واتساب" data-lang-en="Contact on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span>Contact on WhatsApp</span>
+      </a>
+      <div class="social-links">
+        <a href="https://www.facebook.com/share/1DhNCZJB5Q/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.tiktok.com/@alihasan7767" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/alihasaan694" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="caa"
+      >
+        © <span id="year"></span> All Rights Reserved | by <a
+        class="dev"href="https://wa.me/201501480908" target="_blank">Abdullah</a>
+      </div>
 
-    <div class="controls">
-      <button id="theme-toggle" class="toggle-btn">🌙</button>
-      <button id="lang-toggle" class="toggle-btn">EN</button>
     </div>
-
-    <button class="burger" id="burger">☰</button>
-  </div>
-
-  <nav class="nav" id="nav">
-    <a href="#about" data-lang-en="About" data-lang-ar="عني">About</a>
-    <a href="#skills" data-lang-en="Skills" data-lang-ar="المهارات">Skills</a>
-    <a href="#portfolio1" data-lang-en="Portfolio" data-lang-ar="الأعمال">Portfolio</a>
-    <a href="#contact" data-lang-en="Contact" data-lang-ar="تواصل">Contact</a>
-  </nav>
-</header>
-
-<main class="container">
-
-<section id="about" class="section">
-  <div class="pro-img">
-    <img src="/pro-ali.png" alt="Ali Hasan Avatar">
-  </div>
-
-  <div class="surface">
-    <h2 data-lang-en="About Me" data-lang-ar="عني">About Me</h2>
-    <p id="typing-about"
-       data-text-en="My name is Ali Hasan Elsharkawy, born in 2008. I have learned photography, videography, and graphic design, continuously improving my skills while working alongside my studies."
-       data-text-ar="اسمي علي حسن الشرقاوي ، من مواليد 2008. لقد تعلمت التصوير الفوتوغرافي, بالفيديو, والتصميم الجرافيكي, تحسين مهاراتي باستمرار أثناء العمل جنبا إلى جنب مع دراستي..">
-    </p>
-  </div>
-</section>
-
-<section id="skills" class="section">
-  <h2 data-lang-en="My Skills" data-lang-ar="مهاراتي">My Skills</h2>
-
-  <div class="skills-grid">
-    <span class="skill-item"><i class="fa-solid fa-video"></i> Video Editing</span>
-    <span class="skill-item"><i class="fa-solid fa-camera"></i> Photography</span>
-    <span class="skill-item"><i class="fa-solid fa-palette"></i> Graphic Design</span>
-  </div>
-</section>
-
-<section id="portfolio1" class="section">
-  <h2 data-lang-en="My Work" data-lang-ar="أعمالي">My Work</h2>
-  <div id="portfolio2">
-  <div class="portfolio-filters">
-  <button class="filter-btn active" data-category="main"
-  data-lang-ar="الاساس"
-  data-lang-en="Main"
-  >Main</button>
-  <button class="filter-btn" data-category="logos"
-  data-lang-ar="شعارات"
-data-lang-en="Logos"
-  >Logos</button>
-  <button class="filter-btn" data-category="posts"
-  data-lang-ar="منشروات"
-  data-lang-en="Posts"
-  >Posts</button>
-   <button class="filter-btn" data-category="photography"
-  data-lang-ar="صور فوتوغرافية"
-  data-lang-en="photography"
-  >photography</button>
-   <button class="filter-btn" data-category="videos"
-  data-lang-ar="فديوهات"
-  data-lang-en="videos"
-  >videos</button>
-  <button class="filter-btn" data-category="ids"
-  data-lang-ar="بطاقات"
-  data-lang-en="IDs"
-  >IDs</button>
-</div>
-<div class="portfolio-grid" id="portfolio"></div>
-</div>
-</section>
-
-</main>
-
-<section class="photo-s" id="photoS">
-  <img id="photoIm" src="" alt="">
-</section>
-
-<footer id="contact" class="surface">
-  <div class="container">
-    <h2 data-lang-en="Get In Touch" data-lang-ar="تواصل معي">Get In Touch</h2>
-
-<a href="https://wa.me/201220728654"
-   target="_blank"
-   class="whatsapp-btn"
-   data-lang-ar="تواصل معي على واتساب"
-   data-lang-en="contact on WhatsApp ">
-
-  <i class="fab fa-whatsapp"></i>
-  <span>Contact on WhatsApp</span>
-
-</a>
-  <div class="social-links">
-  <a href="https://www.facebook.com/share/1DhNCZJB5Q/" target="_blank">
-    <i class="fab fa-facebook-f"></i>
-  </a>
+  </footer>
   
-  <a href="https://www.tiktok.com/@alihasan7767" target="_blank">
-    <i class="fab fa-tiktok"></i>
-  </a>
-  
-  <a href="https://www.instagram.com/alihasaan694" target="_blank">
-    <i class="fab fa-instagram"></i>
-  </a>
-</div>
-
-    <div class="copyright">
-      © <span id="year"></span> All Rights Reserved
-    </div>|by <a href="https://wa.me/201501480908"target="_blank" >abdullah</a>
-  </div>
-</footer>
-<div class="modal" id="imageModal">
-  <div class="modal-content">
-    <button class="modal-close-btn" id="modalClose">×</button>
-
-    <img id="modalImg" src="" alt="">
-
-    <div class="modal-text">
-      <h3 id="modalTitle"></h3>
-      <p id="modalBrief"></p>
-      <p id="modalReview"></p>
+  <!-- MODAL -->
+  <div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+    
+      <div class="slide-container">
+        <div id="modal-media"></div>
+        <h2 id="modal-title"></h2>
+        <p id="modal-brief"></p>
+        <p id="modal-review"></p>
+      </div>
+    
     </div>
   </div>
-</div>
-<script src="main.js"></script>
+  
+  <script src="main.js"></script>
 </body>
+
 </html>
+

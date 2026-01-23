@@ -1,54 +1,30 @@
 {
   "projects": [
-    {
-      "id": 1,
-      "title": "ذاكرلي مع التوني (مادة التاريخ)",
-      "brief": "أنا مدرس تاريخ بحاول أكسر الصورة النمطية للمادة. محتاج تصميم بوستر لبرنامجي الجديد يجمع بين الهيبة التاريخية والروح العصرية لجيل السوشيال ميديا. عايز أظهر ببدلة عسكرية ملكية فخمة، ويكون ورايا ملوك فراعنة بيستخدموا الموبايلات ومنبهرين بيها، عشان نوصل رسالة إن التاريخ ممتع وحي.",
-      "review": "شغل عبقري! قدرت تدمج العناصر التاريخية مع الموبايلات بشكل كوميدي وذكي جداً في نفس الوقت. توزيع الإضاءة والظلال على وشوش الفراعنة طالع احترافي ومقنع، والخط العربي واخد مساحة كويسة وواضح جداً.",
-      "category": "Poster Design",
-      "style": ["Historical", "Modern", "Comic"],
-      "path":"/posts-6.jpg",
-      "keywords": ["تاريخ", "فراعنة", "سوشيال ميديا", "تعليمي"]
-    },
-    {
-      "id": 2,
-      "title": "مراجعة ليلة الامتحان (العميد - أ/ محمد شحاتة)",
-      "brief": "محتاج تصميم لمراجعة ليلة الامتحان في اللغة العربية. لقبي هو العميد، فالتصميم لازم يكون فيه وقار وهيبة. عايز ستايل Cyberpunk أو تقني يدي إيحاء بالتركيز وفك الشفرات، مع إضاءة Neon وخلفية غامضة وشخصية في الضباب.",
-      "review": "التصميم مريح للعين وفي نفس الوقت بيجذب الانتباه جداً وسط زحمة البوستات. حركة الخطوط الإلكترونية حوالين كلمة العميد فكرة ممتازة، ومبينة إن المحتوى فيه ذكاء وتخطيط.",
-      "category": "Social Media Poster",
-      "path":"/posts-2.jpg",
-      "style": ["Cyberpunk", "Neon", "Dark"],
-      "keywords": ["لغة عربية", "مراجعة", "ليلة الامتحان", "هيبة"]
-    },
-    {
-      "id": 3,
-      "title": "معرض الموهوبين (فعالية مدرسية)",
-      "brief": "بوستر إعلاني لمعرض الموهوبين السنوي بالمدرسة، يشمل صور حقيقية للطلاب وأعمالهم. تنسيق هندسي بالخلايا السداسية، ألوان أساسية أسود وأصفر، مع إبراز صورة قائد الفريق بتأثير نار زرقاء.",
-      "review": "التصميم مرتب جداً والبيانات واضحة. دمج صورة علي حسن مع تأثير النار الزرقاء طلّع البوستر بشكل شبابي ومبهر جداً.",
-      "category": "Event Poster",
-      "style": ["Geometric", "High Contrast"],
-      "path":"/posts-1.jpg",
-      "keywords": ["موهوبين", "طلاب", "معرض", "مدرسة"]
-    },
-    {
-      "id": 4,
-      "title": "د/ محمد العريني (لغة إنجليزية - هوية بصرية)",
-      "brief": "مجموعة تصاميم متكاملة للسوشيال ميديا تشمل نصائح دراسية سريعة بألوان بنفسجي وبرتقالي، شخصية كاريكاتير Avatar، وتصميم إعلاني لمسابقة للأطفال بلون أزرق مبهج.",
-      "review": "التنوع ده هو اللي كنت بدور عليه. الكاريكاتير نسخة مني فعلاً، وتنسيق بوستات النصائح احترافي وسهل القراءة.",
-      "category": "Visual Identity",
-      "path":"/posts-5.jpg",
-      "style": ["Modern", "Friendly", "Educational"],
-      "keywords": ["هوية بصرية", "لغة إنجليزية", "كاريكاتير", "سوشيال ميديا"]
-    },
-    {
-      "id": 5,
-      "title": "شعار مدرسة تونا الجبل للموهوبين",
-      "brief": "تصميم شعار رسمي لمدرسة تهتم بالموهوبين في تونا الجبل، يجمع بين الرموز التاريخية (الأهرامات، أبو الهول) ورموز الفن، داخل إطار دائري Emblem باللون الكحلي والذهبي.",
-      "review": "لوجو ممتاز! الرموز متجمعة بدون زحمة، والخط متناسق جداً مع الشكل الدائري، واللون الذهبي مدي فخامة واضحة.",
-      "category": "Logo Design",
-      "style": ["Emblem", "Luxury"],
-      "path":"/logos-4.jpg",
-      "keywords": ["شعار", "مدرسة", "موهوبين", "هوية"]
-    }
+    { "id": 1, "title": "ذاكرلي مع التوني (مادة التاريخ)", "brief": "كسر الصورة النمطية للمادة", "review": "دمج العناصر التاريخية رائع", "category": "Poster Design", "style": ["Historical", "Modern", "Comic"], "path": "/posts-6.jpg" },
+    { "id": 2, "title": "مراجعة ليلة الامتحان", "brief": "تصميم لمراجعة ليلة الامتحان", "review": "مريح للعين", "category": "Social Media Poster", "style": ["Cyberpunk", "Neon", "Dark"], "path": "/posts-2.jpg" },
+    { "id": 3, "title": "معرض الموهوبين", "brief": "بوستر معرض الموهوبين السنوي", "review": "مرتب جداً", "category": "Event Poster", "style": ["Geometric", "High Contrast"], "path": "/posts-1.jpg" },
+    { "id": 4, "title": "د/ محمد العريني – هوية بصرية", "brief": "مجموعة تصاميم للسوشيال ميديا", "review": "التنوع ممتاز", "category": "Visual Identity", "style": ["Modern", "Educational"], "path": "/posts-5.jpg" },
+    { "id": 5, "title": "شعار مدرسة تونا الجبل", "brief": "شعار رسمي للمدرسة", "review": "رموز متجمعة بدون زحمة", "category": "Logo Design", "style": ["Emblem", "Luxury"], "path": "/logos-4.jpg" }
+  ],
+  
+  "posts": [
+    { "id": 7, "title": "العرض التعريفي للأستاذ عبد الله محمود", "brief": "Landing Page/بوستر تعريفي", "review": "ترتيب المعلومات ممتاز", "category": "Educational Presentation", "style": ["UI/UX", "Educational", "Modern"], "path": "/posts-7.jpg" },
+    { "id": 8, "title": "حملة خصومات أكاديمية شرقاوي ستوديو", "brief": "بوستر لإطلاق فرع جديد", "review": "شغل فاخر", "category": "Marketing Campaign", "style": ["Luxury", "Arabic", "Bold"], "path": "/posts-8.jpg" },
+    { "id": 9, "title": "إمبراطور الفلسفة والمنطق", "brief": "بوستر مراجعة ليلة الامتحان", "review": "تصميم فيه هيبة", "category": "Educational Poster", "style": ["Luxury", "Neon", "Academic"], "path": "/posts-9.jpg" },
+    { "id": 10, "title": "خريطة خدمات السوشيال ميديا", "brief": "تصميم يوضح الترابط", "review": "مريح للعين", "category": "Infographic", "style": ["Minimal", "Clean"], "path": "/posts-10.jpg" }
+  ],
+  
+  "logos": [
+    { "id": 1, "title": "Ali Hassan – Photography", "brief": "لوجو Minimal", "review": "تسلم إيدك", "category": "Branding", "style": ["Minimal", "Luxury"], "path": "/logos-1.jpg" },
+    { "id": 2, "title": "Ali Hassan – 3D Metallic", "brief": "نسخة ثلاثية الأبعاد", "review": "شغل عالمي", "category": "Logo Variation", "style": ["3D", "Metallic"], "path": "/logos-2.jpg" },
+    { "id": 3, "title": "Ahmed El-Sharqawy – Cyber Tech", "brief": "لوجو يعبر عن الطاقة", "review": "التصميم قنبلة", "category": "Brand Identity", "style": ["Cyberpunk", "Neon"], "path": "/logos-3.jpg" },
+    { "id": 5, "title": "Ali Shargawi – E-commerce", "brief": "هوية منصة تسوق", "review": "شغل جبار", "category": "E-commerce Branding", "style": ["3D", "Metallic", "Bold"], "path": "/logos-5.jpg" },
+    { "id": 11, "title": "الهوية البصرية لمركز 'المحمدي' للصيانة", "brief": "تصميم يافطة وهوية مودرن", "review": "تأثير Glow ونيون ممتاز", "category": "Brand Identity", "style": ["3D", "Neon", "Tech"], "path": "/logos-6.jpg" }
+  ],
+  
+  "videos": [],
+  "photos": [],
+  "ids": [
+    { "id": 1, "title": "التصميم التعريفي للجان اتحاد الطلاب", "brief": "تصميم تعريفي رسمي", "review": "الشغل متناسق جداً", "category": "Identity Design", "style": ["Official", "Clean", "Educational"], "path": "/ids-1.jpg" }
   ]
 }
