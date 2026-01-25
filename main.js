@@ -182,7 +182,7 @@ let mainProjects = [],
   photosA = [];
 let portfolio = document.getElementById("portfolio");
 
-<<<<<<< HEAD
+
 /* ========= الفلاتر ========= */
 document.querySelectorAll(".filter-btn").forEach(btn => {
   btn.onclick = (e) => {
@@ -201,7 +201,7 @@ document.querySelectorAll(".filter-btn").forEach(btn => {
     if (category === "videos") portfolio.innerHTML = getStaticVideos("videos", 7);
   };
 });
-=======
+
 fetch("/projects.json")
   .then((res) => res.json())
   .then((data) => {
@@ -284,6 +284,5 @@ function renderSection(arr, folder = "", count = 0, type = "image") {
     }
   }
 }
->>>>>>> e73af6e019057367b593abac76ca19daba74253d
 
 
