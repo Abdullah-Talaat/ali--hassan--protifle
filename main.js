@@ -182,6 +182,26 @@ let mainProjects = [],
   photosA = [];
 let portfolio = document.getElementById("portfolio");
 
+<<<<<<< HEAD
+/* ========= الفلاتر ========= */
+document.querySelectorAll(".filter-btn").forEach(btn => {
+  btn.onclick = (e) => {
+    
+    document.querySelectorAll(".filter-btn")
+      .forEach(b => b.classList.remove("active"));
+    e.target.classList.add("active");
+    
+    const category = e.target.dataset.category;
+    
+    if (category === "main") showMain();
+    if (category === "logos") portfolio.innerHTML = getStaticImages("logos", 4);
+    if (category === "ids") portfolio.innerHTML = getStaticImages("ids", 1);
+    if (category === "posts") portfolio.innerHTML = getStaticImages("posts", 8);
+    if (category === "photography") portfolio.innerHTML = getStaticImages("photography", 8);
+    if (category === "videos") portfolio.innerHTML = getStaticVideos("videos", 7);
+  };
+});
+=======
 fetch("/projects.json")
   .then((res) => res.json())
   .then((data) => {
@@ -264,3 +284,6 @@ function renderSection(arr, folder = "", count = 0, type = "image") {
     }
   }
 }
+>>>>>>> e73af6e019057367b593abac76ca19daba74253d
+
+
