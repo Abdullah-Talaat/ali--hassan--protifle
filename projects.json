@@ -19,12 +19,16 @@
     { "id": 2, "title": "Ali Hassan – 3D Metallic", "brief": "نسخة ثلاثية الأبعاد", "review": "شغل عالمي", "category": "Logo Variation", "style": ["3D", "Metallic"], "path": "/logos-2.jpg" },
     { "id": 3, "title": "Ahmed El-Sharqawy – Cyber Tech", "brief": "لوجو يعبر عن الطاقة", "review": "التصميم قنبلة", "category": "Brand Identity", "style": ["Cyberpunk", "Neon"], "path": "/logos-3.jpg" },
     { "id": 5, "title": "Ali Shargawi – E-commerce", "brief": "هوية منصة تسوق", "review": "شغل جبار", "category": "E-commerce Branding", "style": ["3D", "Metallic", "Bold"], "path": "/logos-5.jpg" },
-    { "id": 11, "title": "الهوية البصرية لمركز 'المحمدي' للصيانة", "brief": "تصميم يافطة وهوية مودرن", "review": "تأثير Glow ونيون ممتاز", "category": "Brand Identity", "style": ["3D", "Neon", "Tech"], "path": "/logos-6.jpg" }
+    { "id": 11,
+    
+    
+"title": "د/ محمد العريني – هوية بصرية", "brief": "مجموعة تصاميم للسوشيال ميديا", "review": "التنوع ممتاز"
+    , "category": "Brand Identity", "style": ["3D", "Neon", "Tech"], "path": "/logos-6.jpg" }
   ],
   
   "videos": [],
   "photos": [],
-  "ids": [
-    { "id": 1, "title": "التصميم التعريفي للجان اتحاد الطلاب", "brief": "تصميم تعريفي رسمي", "review": "الشغل متناسق جداً", "category": "Identity Design", "style": ["Official", "Clean", "Educational"], "path": "/ids-1.jpg" }
-  ]
+ "ids": [
+  { "id": 1, "title": "التصميم التعريفي للجان اتحاد الطلاب", "brief": "تصميم تعريفي رسمي", "review": "الشغل متناسق جداً", "category": "Identity Design", "style": ["Official", "Clean", "Educational"], "path": "/ids-1.jpg" }
+]
 }
