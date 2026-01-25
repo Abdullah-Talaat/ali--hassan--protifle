@@ -97,7 +97,7 @@ window.onload = () => {
           renderSection(postsA, "posts", 10, "image");
           break;
         case "photography":
-          renderSection(photosA, "photos", 1, "image");
+          renderSection(photosA, "photos", 8, "image");
           break;
         case "videos":
           renderSection(videosA, "videos", 8, "video");
