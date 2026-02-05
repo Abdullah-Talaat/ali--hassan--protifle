@@ -198,7 +198,7 @@ document.querySelectorAll(".filter-btn").forEach(btn => {
     if (category === "ids") portfolio.innerHTML = getStaticImages("ids", 1);
     if (category === "posts") portfolio.innerHTML = getStaticImages("posts", 8);
     if (category === "photography") portfolio.innerHTML = getStaticImages("photography", 8);
-    if (category === "videos") portfolio.innerHTML = getStaticVideos("videos", 7);
+    if (category === "videos") portfolio.innerHTML = getStaticVideos("videos", 7)
   };
 });
 

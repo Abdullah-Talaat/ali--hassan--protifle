@@ -5,6 +5,7 @@
     { "id": 3, "title": "معرض الموهوبين", "brief": "بوستر معرض الموهوبين السنوي", "review": "مرتب جداً", "category": "Event Poster", "style": ["Geometric", "High Contrast"], "path": "/posts-1.jpg" },
     { "id": 4, "title": "د/ محمد العريني – هوية بصرية", "brief": "مجموعة تصاميم للسوشيال ميديا", "review": "التنوع ممتاز", "category": "Visual Identity", "style": ["Modern", "Educational"], "path": "/posts-5.jpg" },
     { "id": 5, "title": "شعار مدرسة تونا الجبل", "brief": "شعار رسمي للمدرسة", "review": "رموز متجمعة بدون زحمة", "category": "Logo Design", "style": ["Emblem", "Luxury"], "path": "/logos-4.jpg" }
+    {"id":6,"path":"/posts-12.jpg"}
   ],
   
   "posts": [
