@@ -109,6 +109,9 @@ window.onload = () => {
     });
   });
 
+
+
+  
   /* ===== SKILL SCROLL ===== */
   document.querySelectorAll(".skill-item").forEach((skill) => {
     skill.addEventListener("click", () => {
