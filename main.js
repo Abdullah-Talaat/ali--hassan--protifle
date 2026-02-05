@@ -78,57 +78,71 @@ window.onload = () => {
     };
   }
 
-  /* ===== FILTER BUTTONS ===== */
-  document.querySelectorAll(".filter-btn").forEach((btn) => {
-    btn.onclick = (e) => {
-      document
-        .querySelectorAll(".filter-btn")
-        .forEach((b) => b.classList.remove("active"));
-      e.target.classList.add("active");
+/* ================== FILTER BUTTONS ================== */
+document.querySelectorAll(".filter-btn").forEach((btn) => {
+  btn.onclick = (e) => {
+    document
+      .querySelectorAll(".filter-btn")
+      .forEach((b) => b.classList.remove("active"));
+    
+    e.currentTarget.classList.add("active");
+    const cat = e.currentTarget.dataset.category;
+    
+    switch (cat) {
+      case "main":
+        renderSection(mainProjects);
+        break;
+      case "logos":
+        renderSection(logosA);
+        break;
+      case "posts":
+        renderSection(postsA);
+        break;
+      case "ids":
+        renderSection(idsA);
+        break;
+      case "photography":
+        renderSection(photosA);
+        break;
+      case "videos":
+        renderSection(videosA);
+        break;
+    }
+  };
+});
 
-      const cat = e.target.dataset.category;
-
-      if (cat === "main") renderSection(mainProjects);
-      if (cat === "logos") renderSection(logosA);
-      if (cat === "posts") renderSection(postsA);
-      if (cat === "ids") renderSection(idsA);
-      if (cat === "photography") renderSection(photosA);
-      if (cat === "videos") renderSection(videosA);
-    };
-  });
-};
-
-/* ===== MODAL ===== */
+/* ================== MODAL ================== */
 let currentArray = [];
 let currentSlide = 0;
 
 function openModal(path, title = "", brief = "", review = "", array = []) {
   const modal = document.getElementById("modal");
   modal.style.display = "flex";
+  
   currentArray = array;
   currentSlide = array.findIndex((i) => i.path === path);
+  if (currentSlide < 0) currentSlide = 0;
+  
   renderSlide();
 }
+
 
 function renderSlide() {
   const item = currentArray[currentSlide];
   if (!item) return;
-
+  
   const media = document.getElementById("modal-media");
-  media.innerHTML = item.path.endsWith(".mp4")
-    ? `<video src="${item.path}" controls autoplay></video>`
-    : `<img src="${item.path}" />`;
-
+  media.innerHTML = item.path.endsWith(".mp4") ?
+    `<video src="${item.path}" controls autoplay></video>` :
+    `<img src="${item.path}" alt="${item.title || ""}">`;
+  
   document.getElementById("modal-title").textContent = item.title || "";
   document.getElementById("modal-brief").textContent = item.brief || "";
   document.getElementById("modal-review").textContent = item.review || "";
 }
 
-function closeModal() {
-  document.getElementById("modal").style.display = "none";
-}
 
-/* ===== DATA ===== */
+/* ================== DATA ================== */
 let mainProjects = [],
   postsA = [],
   logosA = [],
@@ -136,43 +150,91 @@ let mainProjects = [],
   videosA = [],
   photosA = [];
 
+/* ===== دالة ذكية: دمج JSON + الترقيم ===== */
+function buildSection(type, total, ext, dbArray = []) {
+  const result = [];
+  
+  for (let i = 1; i <= total; i++) {
+    const path = `/${type}-${i}.${ext}`;
+    
+    const dbItem = dbArray.find((item) => item.path === path);
+    
+    result.push(
+      dbItem || {
+        path,
+        title: `${type.toUpperCase()} ${i}`,
+        brief: "",
+        review: "",
+        index:i
+      }
+    );
+  }
+  
+  return result;
+}
+
+/* ================== FETCH JSON ================== */
+
+let videosAa =[]
 fetch("/projects.json")
   .then((res) => res.json())
   .then((data) => {
-    mainProjects = data.projects || [];
-    postsA = data.posts || [];
-    logosA = data.logos || [];
-    idsA = data.ids || [];
-    videosA = data.videos || [];
-    photosA = data.photos || [];
-
+    videosAa = data.videos
+    let sizes = data.sizes
+    postsA = buildSection
+    ("posts", sizes.posts, "jpg", data.posts || []);
+    logosA = buildSection
+    ("logos", sizes.logos, "jpg", data.logos || []);
+    photosA = buildSection
+    ("photos", sizes.photos, "jpg", data.photos || []);
+    idsA = buildSection
+    ("ids", sizes.ids, "jpg", data.ids || []);
+    videosA = buildSection
+  ("videos", sizes.videos, "mp4", data.ids || []);; // لا يوجد حالياً
+    
+    mainProjects = [
+      ...postsA.slice(0, 4),
+      ...logosA.slice(0, 2)
+    ];
+    
     renderSection(mainProjects);
-  });
+  })
+  .catch((err) => console.error("JSON Error:", err));
 
-/* ===== RENDER ===== */
+/* ================== RENDER ================== */
 function renderSection(arr) {
   const portfolio = document.getElementById("portfolio");
   portfolio.innerHTML = "";
-
+  
   arr.forEach((item) => {
     const div = document.createElement("div");
     div.className = "portfolio-item";
-
+    
     div.onclick = () =>
       openModal(item.path, item.title, item.brief, item.review, arr);
-
+    
     if (item.path.endsWith(".mp4")) {
       const video = document.createElement("video");
-      video.src = item.path;
+      video.src = videosAa[item.index-1];
+      console.log(videosAa[item.index-1])
+      
       video.muted = true;
       video.loop = true;
+      video.autoplay = true;
       div.appendChild(video);
     } else {
       const img = document.createElement("img");
       img.src = item.path;
+      img.alt = item.title || "";
       div.appendChild(img);
     }
-
+    
     portfolio.appendChild(div);
   });
+}
+
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display ="none"
 }

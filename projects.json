@@ -1,10 +1,20 @@
+
+
 {
+  "sizes":{
+    "posts":12,
+    "logos":8,
+    "photos":7 ,
+    "ids":1 ,
+    "videos": 7
+  },
+  "videos": ["https://drive.google.com/uc?export=download&id=1QBBpXfHiF8txiV0TW0NrFwpUk51aR5gT"],
   "projects": [
     { "id": 1, "title": "ذاكرلي مع التوني (مادة التاريخ)", "brief": "كسر الصورة النمطية للمادة", "review": "دمج العناصر التاريخية رائع", "category": "Poster Design", "style": ["Historical", "Modern", "Comic"], "path": "/posts-6.jpg" },
     { "id": 2, "title": "مراجعة ليلة الامتحان", "brief": "تصميم لمراجعة ليلة الامتحان", "review": "مريح للعين", "category": "Social Media Poster", "style": ["Cyberpunk", "Neon", "Dark"], "path": "/posts-2.jpg" },
     { "id": 3, "title": "معرض الموهوبين", "brief": "بوستر معرض الموهوبين السنوي", "review": "مرتب جداً", "category": "Event Poster", "style": ["Geometric", "High Contrast"], "path": "/posts-1.jpg" },
     { "id": 4, "title": "د/ محمد العريني – هوية بصرية", "brief": "مجموعة تصاميم للسوشيال ميديا", "review": "التنوع ممتاز", "category": "Visual Identity", "style": ["Modern", "Educational"], "path": "/posts-5.jpg" },
-    { "id": 5, "title": "شعار مدرسة تونا الجبل", "brief": "شعار رسمي للمدرسة", "review": "رموز متجمعة بدون زحمة", "category": "Logo Design", "style": ["Emblem", "Luxury"], "path": "/logos-4.jpg" }
+    { "id": 5, "title": "شعار مدرسة تونا الجبل", "brief": "شعار رسمي للمدرسة", "review": "رموز متجمعة بدون زحمة", "category": "Logo Design", "style": ["Emblem", "Luxury"], "path": "/logos-4.jpg" },
     {"id":6,"title":"","brief":"","review":"","category":"","path":"/posts-12.jpg"}
   ],
   
@@ -27,8 +37,8 @@
     , "category": "Brand Identity", "style": ["3D", "Neon", "Tech"], "path": "/logos-6.jpg" }
   ],
   
-  "videos": [],
-  "photos": [],
+
+  
  "ids": [
   { "id": 1, "title": "التصميم التعريفي للجان اتحاد الطلاب", "brief": "تصميم تعريفي رسمي", "review": "الشغل متناسق جداً", "category": "Identity Design", "style": ["Official", "Clean", "Educational"], "path": "/ids-1.jpg" }
 ]
