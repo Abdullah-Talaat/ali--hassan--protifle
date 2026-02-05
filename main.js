@@ -193,7 +193,7 @@ document.querySelectorAll(".filter-btn").forEach(btn => {
     
     const category = e.target.dataset.category;
     
-    if (category === "main") showMain();
+    
     if (category === "logos") portfolio.innerHTML = getStaticImages("logos", 8);
     if (category === "ids") portfolio.innerHTML = getStaticImages("ids", 1);
     if (category === "posts") portfolio.innerHTML = getStaticImages("posts", 12);
@@ -211,6 +211,7 @@ fetch("/projects.json")
     idsA = data.ids || [];
     videosA = data.videos || [];
     photosA = data.photos || [];
+  
     renderSection(mainProjects, "projects");
   })
   .catch((err) => console.error(err));
