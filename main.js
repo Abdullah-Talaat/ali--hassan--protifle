@@ -22,12 +22,11 @@ window.onload = () => {
 
   function applyLanguage() {
     document.querySelectorAll("[data-lang-en]").forEach((el) => {
-      el.textContent = currentLang === "en" ? el.dataset.langEn : el.dataset.langAr;
+      el.textContent =
+        currentLang === "en" ? el.dataset.langEn : el.dataset.langAr;
     });
     document.documentElement.lang = currentLang;
     document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
-    const caaEl = document.querySelector(".caa");
-    if (caaEl) caaEl.dir = "ltr";
     startTypingAbout();
   }
 
@@ -57,7 +56,8 @@ window.onload = () => {
   function startTypingAbout() {
     const el = document.getElementById("typing-about");
     if (!el) return;
-    const text = currentLang === "en" ? el.dataset.textEn : el.dataset.textAr;
+    const text =
+      currentLang === "en" ? el.dataset.textEn : el.dataset.textAr;
     typeText(el, text);
   }
 
@@ -67,6 +67,7 @@ window.onload = () => {
   const burger = document.getElementById("burger");
   const nav = document.getElementById("nav");
   let isOpen = false;
+
   if (burger && nav) {
     burger.onclick = () => {
       nav.classList.toggle("show");
@@ -79,45 +80,21 @@ window.onload = () => {
 
   /* ===== FILTER BUTTONS ===== */
   document.querySelectorAll(".filter-btn").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      document.querySelectorAll(".filter-btn").forEach((b) =>
-        b.classList.remove("active")
-      );
+    btn.onclick = (e) => {
+      document
+        .querySelectorAll(".filter-btn")
+        .forEach((b) => b.classList.remove("active"));
       e.target.classList.add("active");
-      const category = e.target.dataset.category;
 
-      switch (category) {
-        case "main":
-          renderSection(mainProjects, "projects");
-          break;
-        case "logos":
-          renderSection(logosA, "logos", 8, "image");
-          break;
-        case "posts":
-          renderSection(postsA, "posts", 12, "image");
-          break;
-        case "photography":
-          renderSection(photosA, "photos", 8, "image");
-          break;
-        case "videos":
-          renderSection(videosA, "videos", 0, "video");
-          break;
-        case "ids":
-          renderSection(idsA, "ids", 1, "image");
-          break;
-      }
-    });
-  });
+      const cat = e.target.dataset.category;
 
-
-
-  
-  /* ===== SKILL SCROLL ===== */
-  document.querySelectorAll(".skill-item").forEach((skill) => {
-    skill.addEventListener("click", () => {
-      const portfolioSection = document.getElementById("portfolio2");
-      if (portfolioSection) portfolioSection.scrollIntoView({ behavior: "smooth" });
-    });
+      if (cat === "main") renderSection(mainProjects);
+      if (cat === "logos") renderSection(logosA);
+      if (cat === "posts") renderSection(postsA);
+      if (cat === "ids") renderSection(idsA);
+      if (cat === "photography") renderSection(photosA);
+      if (cat === "videos") renderSection(videosA);
+    };
   });
 };
 
@@ -125,85 +102,39 @@ window.onload = () => {
 let currentArray = [];
 let currentSlide = 0;
 
-function openModal(path, title = "", brief = "", review = "", array = null) {
+function openModal(path, title = "", brief = "", review = "", array = []) {
   const modal = document.getElementById("modal");
   modal.style.display = "flex";
-
-  if (array && Array.isArray(array)) {
-    currentArray = array;
-    currentSlide = array.findIndex((item) => item.path === path);
-  } else {
-    currentArray = [];
-  }
-
-  renderSlide(path, title, brief, review);
+  currentArray = array;
+  currentSlide = array.findIndex((i) => i.path === path);
+  renderSlide();
 }
 
-function renderSlide(path, title = "", brief = "", review = "") {
-  const mediaContainer = document.getElementById("modal-media");
+function renderSlide() {
+  const item = currentArray[currentSlide];
+  if (!item) return;
 
-  if (currentArray.length > 0) {
-    const item = currentArray[currentSlide];
-    path = item.path || path;
-    title = item.title || title;
-    brief = item.brief ? "الطلب: " + item.brief : brief;
-    review = item.review ? "رد العميل: " + item.review : review;
-  }
+  const media = document.getElementById("modal-media");
+  media.innerHTML = item.path.endsWith(".mp4")
+    ? `<video src="${item.path}" controls autoplay></video>`
+    : `<img src="${item.path}" />`;
 
-  if (!path) return;
-
-  if (path.endsWith(".mp4") || path.endsWith(".webm")) {
-    mediaContainer.innerHTML = `<video src="${path}" controls autoplay muted></video>`;
-  } else {
-    mediaContainer.innerHTML = `<img src="${path}" alt="${title}">`;
-  }
-
-  document.getElementById("modal-title").textContent = title;
-  document.getElementById("modal-brief").textContent = brief;
-  document.getElementById("modal-review").textContent = review;
+  document.getElementById("modal-title").textContent = item.title || "";
+  document.getElementById("modal-brief").textContent = item.brief || "";
+  document.getElementById("modal-review").textContent = item.review || "";
 }
 
 function closeModal() {
-  const modal = document.getElementById("modal");
-  modal.style.display = "none";
-  currentArray = [];
+  document.getElementById("modal").style.display = "none";
 }
 
-const modal = document.getElementById("modal");
-if (modal) {
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) closeModal();
-  });
-}
-
-/* ===== JSON DATA ===== */
+/* ===== DATA ===== */
 let mainProjects = [],
   postsA = [],
   logosA = [],
   idsA = [],
   videosA = [],
   photosA = [];
-let portfolio = document.getElementById("portfolio");
-
-
-/* ========= الفلاتر ========= */
-document.querySelectorAll(".filter-btn").forEach(btn => {
-  btn.onclick = (e) => {
-    
-    document.querySelectorAll(".filter-btn")
-      .forEach(b => b.classList.remove("active"));
-    e.target.classList.add("active");
-    
-    const category = e.target.dataset.category;
-    
-    
-    if (category === "logos") portfolio.innerHTML = getStaticImages("logos", 8);
-    if (category === "ids") portfolio.innerHTML = getStaticImages("ids", 1);
-    if (category === "posts") portfolio.innerHTML = getStaticImages("posts", 12);
-    if (category === "photography") portfolio.innerHTML = getStaticImages("photography", 8);
-    if (category === "videos") portfolio.innerHTML = getStaticVideos("videos", 0)
-  };
-});
 
 fetch("/projects.json")
   .then((res) => res.json())
@@ -214,79 +145,34 @@ fetch("/projects.json")
     idsA = data.ids || [];
     videosA = data.videos || [];
     photosA = data.photos || [];
-  
-    renderSection(mainProjects, "projects");
-  })
-  .catch((err) => console.error(err));
 
-/* ===== RENDER SECTION ===== */
-function renderSection(arr, folder = "", count = 0, type = "image") {
-  if (!portfolio) return;
+    renderSection(mainProjects);
+  });
+
+/* ===== RENDER ===== */
+function renderSection(arr) {
+  const portfolio = document.getElementById("portfolio");
   portfolio.innerHTML = "";
 
-  if (arr && arr.length > 0) {
-    arr.forEach((item) => {
-      const div = document.createElement("div");
-      div.classList.add("portfolio-item");
+  arr.forEach((item) => {
+    const div = document.createElement("div");
+    div.className = "portfolio-item";
 
-      // أي عنصر داخل div يفتح modal
-      div.addEventListener("click", () =>
-        openModal(item.path, item.title, item.brief, item.review, arr)
-      );
+    div.onclick = () =>
+      openModal(item.path, item.title, item.brief, item.review, arr);
 
-      if (item.path.endsWith(".mp4") || item.path.endsWith(".webm")) {
-        const video = document.createElement("video");
-        video.src = item.path;
-        video.muted = true;
-        video.loop = true;
-        video.playsInline = true;
-        div.appendChild(video);
-      } else {
-        const img = document.createElement("img");
-        img.src = item.path;
-        img.alt = item.title || "";
-        div.appendChild(img);
-      }
-
-      const overlay = document.createElement("div");
-      overlay.classList.add("overlay");
-      overlay.textContent = "View";
-      div.appendChild(overlay);
-
-      portfolio.appendChild(div);
-    });
-  } else if (folder && count > 0) {
-    for (let i = 1; i <= count; i++) {
-      const div = document.createElement("div");
-      div.classList.add("portfolio-item");
-
-      div.addEventListener("click", () => {
-        const src = type === "video" ? `${folder}-${i}.mp4` : `${folder}-${i}.jpg`;
-        openModal(src);
-      });
-
-      if (type === "video") {
-        const video = document.createElement("video");
-        video.src = `${folder}-${i}.mp4`;
-        video.muted = true;
-        video.loop = true;
-        video.playsInline = true;
-        div.appendChild(video);
-      } else {
-        const img = document.createElement("img");
-        img.src = `${folder}-${i}.jpg`;
-        img.alt = `${folder} ${i}`;
-        div.appendChild(img);
-      }
-
-      const overlay = document.createElement("div");
-      overlay.classList.add("overlay");
-      overlay.textContent = "View";
-      div.appendChild(overlay);
-
-      portfolio.appendChild(div);
+    if (item.path.endsWith(".mp4")) {
+      const video = document.createElement("video");
+      video.src = item.path;
+      video.muted = true;
+      video.loop = true;
+      div.appendChild(video);
+    } else {
+      const img = document.createElement("img");
+      img.src = item.path;
+      div.appendChild(img);
     }
-  }
+
+    portfolio.appendChild(div);
+  });
 }
-
-
