@@ -91,16 +91,16 @@ window.onload = () => {
           renderSection(mainProjects, "projects");
           break;
         case "logos":
-          renderSection(logosA, "logos", 5, "image");
+          renderSection(logosA, "logos", 8, "image");
           break;
         case "posts":
-          renderSection(postsA, "posts", 10, "image");
+          renderSection(postsA, "posts", 12, "image");
           break;
         case "photography":
           renderSection(photosA, "photos", 8, "image");
           break;
         case "videos":
-          renderSection(videosA, "videos", 8, "video");
+          renderSection(videosA, "videos", 0, "video");
           break;
         case "ids":
           renderSection(idsA, "ids", 1, "image");
@@ -194,11 +194,11 @@ document.querySelectorAll(".filter-btn").forEach(btn => {
     const category = e.target.dataset.category;
     
     if (category === "main") showMain();
-    if (category === "logos") portfolio.innerHTML = getStaticImages("logos", 4);
+    if (category === "logos") portfolio.innerHTML = getStaticImages("logos", 8);
     if (category === "ids") portfolio.innerHTML = getStaticImages("ids", 1);
-    if (category === "posts") portfolio.innerHTML = getStaticImages("posts", 8);
+    if (category === "posts") portfolio.innerHTML = getStaticImages("posts", 12);
     if (category === "photography") portfolio.innerHTML = getStaticImages("photography", 8);
-    if (category === "videos") portfolio.innerHTML = getStaticVideos("videos", 7)
+    if (category === "videos") portfolio.innerHTML = getStaticVideos("videos", 0)
   };
 });
 
