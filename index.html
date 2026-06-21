@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html translate="no">
 
-
 <!-- SEO Title -->
   <title>Ali Hasan Elsharkawy | Graphic Designer, Photographer & Video Editor</title>
 
@@ -112,19 +111,26 @@
       
       <div class="surface">
         <h2 data-lang-en="About Me" data-lang-ar="عني">About Me</h2>
-        <p id="typing-about" data-text-en="My name is Ali Hasan Elsharkawy, born in 2008. I have learned photography, videography, and graphic design, continuously improving my skills while working alongside my studies." data-text-ar="اسمي علي حسن الشرقاوي ، من مواليد 2008. لقد تعلمت التصوير الفوتوغرافي, والفيديو, والتصميم الجرافيكي,و اعمل على تحسين مهاراتي باستمرار أثناء العمل جنبا إلى جنب مع دراستي..">
-        </p>
+<p id="typing-about" 
+data-text-en="My name is Ali Hasan Elsharkawy, born in 2008. I have learned photography, videography, graphic design, social media marketing (SMM) for over three years, and I have experience in artificial intelligence, continuously improving my skills while working alongside my studies." 
+data-text-ar="اسمي علي حسن الشرقاوي، من مواليد 2008. لقد تعلمت التصوير الفوتوغرافي، والفيديو، والتصميم الجرافيكي، والتسويق عبر وسائل التواصل الاجتماعي (SMM) لأكثر من ثلاث سنوات، ولدي خبرة في الذكاء الاصطناعي، وأعمل على تحسين مهاراتي باستمرار أثناء العمل جنبًا إلى جنب مع دراستي.">
+</p>
       </div>
     </section>
     
-    <section id="skills" class="section">
-      <h2 data-lang-en="My Skills" data-lang-ar="مهاراتي">My Skills</h2>
-      <div class="skills-grid">
-        <span class="skill-item"><i class="fa-solid fa-video"></i> Video Editing</span>
-        <span class="skill-item"><i class="fa-solid fa-camera"></i> Photography</span>
-        <span class="skill-item"><i class="fa-solid fa-palette"></i> Graphic Design</span>
-      </div>
-    </section>
+<section id="skills" class="section">
+  <h2 data-lang-en="My Skills" data-lang-ar="مهاراتي">My Skills</h2>
+  <div class="skills-grid">
+    <span class="skill-item"><i class="fa-solid fa-video"></i> Video Editing</span>
+    <span class="skill-item"><i class="fa-solid fa-camera"></i> Photography</span>
+    <span class="skill-item"><i class="fa-solid fa-palette"></i> Graphic Design</span>
+
+    <!-- Added SMM -->
+<span class="skill-item">
+  <i class="fa-solid fa-fire-flame-curved"></i>  Social Media Marketing (SMM)
+</span>
+  </div>
+</section>
     
     <section id="portfolio1" class="section">
       <h2 data-lang-en="My Work" data-lang-ar="أعمالي">My Work</h2>
@@ -188,6 +194,12 @@
   <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
   <script src="get_firebase_projects.js"></script>
   <script src="main.js"></script>
+  <script>
+document.querySelectorAll('img').forEach(img => {
+    img.loading = 'lazy';
+});
+</script>
+
 </body>
 
 </html>

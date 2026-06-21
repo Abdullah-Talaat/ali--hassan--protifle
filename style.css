@@ -487,3 +487,6 @@ body.dark-mode .social-links a{color:#aaa;}
 #modal-title {
   white-space: pre-line;
 }
+img {
+  background: #eee;
+}

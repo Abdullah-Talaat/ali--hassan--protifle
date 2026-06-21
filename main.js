@@ -1,3 +1,19 @@
+function optimizeCloudinaryUrl(url) {
+    if (!url.includes('/image/upload/')) return url;
+
+    return url.replace(
+        '/image/upload/',
+        '/image/upload/f_auto,q_auto,w_1200/'
+    );
+}
+function optimizeCloudinaryVideoUrl(url) {
+    if (!url.includes('/video/upload/')) return url;
+
+    return url.replace(
+        '/video/upload/',
+        '/video/upload/q_auto,f_auto/'
+    );
+}
 window.onload = () => {
   const portfolio = document.getElementById("portfolio");
 
@@ -139,8 +155,8 @@ function renderSlide() {
   
   media.innerHTML =
     item.type === "video" ?
-    `<video src="${item.url}" controls autoplay></video>` :
-    `<img src="${item.url}" alt="${item.title || ""}">`;
+    `<video src="${optimizeCloudinaryVideoUrl(item.url)}" controls autoplay></video>` :
+    `<img src="${optimizeCloudinaryUrl(item.url)}" alt="${item.title || ""}"  loading="lazy">`;
   
   
   document.getElementById("modal-title").textContent =
@@ -224,7 +240,7 @@ function renderSection(arr) {
     if (item.type === "video") {
       const video = document.createElement("video");
       
-      video.src = item.url;
+      video.src = optimizeCloudinaryVideoUrl(item.url);
       video.muted = true;
       video.loop = true;
       video.autoplay = true;
@@ -233,9 +249,9 @@ function renderSection(arr) {
     } else {
       const img = document.createElement("img");
       
-      img.src = item.url;
+      img.src = optimizeCloudinaryUrl(item.url);
       img.alt = item.title || "";
-      
+      img.loading = 'lazy';
       div.appendChild(img);
     }
     
