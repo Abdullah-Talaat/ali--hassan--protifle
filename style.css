@@ -439,6 +439,7 @@ body.dark-mode .modal-content {
   right: 20px;
   font-size: 35px;
   cursor: pointer;
+  color:#eee;
 }
 
 .prev, .next {
@@ -480,7 +481,7 @@ body.dark-mode .social-links a{color:#aaa;}
 }
 #id{
   color:#C6C8DB;
-  font-size: 10px;
+  font-size: 5px;
 }
 #modal-brief,
 #modal-review,
@@ -489,4 +490,7 @@ body.dark-mode .social-links a{color:#aaa;}
 }
 img {
   background: #eee;
+}
+body.dark-mode img {
+  background: #75767C;
 }

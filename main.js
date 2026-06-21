@@ -49,7 +49,7 @@ window.onload = () => {
   if (langBtn) {
     langBtn.onclick = () => {
       currentLang = currentLang === "en" ? "ar" : "en";
-      langBtn.textContent = currentLang === "en" ? "AR" : "EN";
+      langBtn.textContent = currentLang === "en" ? "ع" : "en";
       applyLanguage();
     };
   }
@@ -143,8 +143,8 @@ function openModal(url, title = "", brief = "", review = "", array = []) {
   renderSlide();
 }
 function formatText(text = "") {
-  return text.length > 100
-    ? text.slice(0, 100) + "..."
+  return text.length > 200
+    ? text.slice(0, 200) + "..."
     : text;
 }
 function renderSlide() {
@@ -167,8 +167,16 @@ document.getElementById("modal-brief").textContent =
 
 document.getElementById("modal-review").textContent =
   formatText(item.review || "");
+  if(document.getElementById("modal-brief").textContent==""
+    ||document.getElementById("modal-review").textContent ==""
+  ){
+    document.getElementById("model-hr").style.display='none' 
+  }else{
+document.getElementById("model-hr").style.display='block' 
+  }
   document.getElementById("id").textContent =
   item.id || "";
+  
 }
 
 /* ================== DATA ================== */
