@@ -115,91 +115,93 @@ document.querySelectorAll(".filter-btn").forEach((btn) => {
 let currentArray = [];
 let currentSlide = 0;
 
-function openModal(path, title = "", brief = "", review = "", array = []) {
+function openModal(url, title = "", brief = "", review = "", array = []) {
   const modal = document.getElementById("modal");
   modal.style.display = "flex";
   
   currentArray = array;
-  currentSlide = array.findIndex((i) => i.path === path);
+  currentSlide = array.findIndex((i) => i.url === url);
+  
   if (currentSlide < 0) currentSlide = 0;
   
   renderSlide();
 }
-
-
+function formatText(text = "") {
+  return text.length > 100
+    ? text.slice(0, 100) + "..."
+    : text;
+}
 function renderSlide() {
   const item = currentArray[currentSlide];
   if (!item) return;
   
   const media = document.getElementById("modal-media");
-  media.innerHTML = item.path.endsWith(".mp4") ?
-    `<video src="${item.path}" controls autoplay></video>` :
-    `<img src="${item.path}" alt="${item.title || ""}">`;
   
-  document.getElementById("modal-title").textContent = item.title || "";
-  document.getElementById("modal-brief").textContent = item.brief || "";
-  document.getElementById("modal-review").textContent = item.review || "";
-}
+  media.innerHTML =
+    item.type === "video" ?
+    `<video src="${item.url}" controls autoplay></video>` :
+    `<img src="${item.url}" alt="${item.title || ""}">`;
+  
+  
+  document.getElementById("modal-title").textContent =
+  formatText(item.title || "");
 
+document.getElementById("modal-brief").textContent =
+  formatText(item.brief || "");
+
+document.getElementById("modal-review").textContent =
+  formatText(item.review || "");
+  document.getElementById("id").textContent =
+  item.id || "";
+}
 
 /* ================== DATA ================== */
-let mainProjects = [],
-  postsA = [],
-  logosA = [],
-  idsA = [],
-  videosA = [],
-  photosA = [];
+let mainProjects = [];
+let postsA = [];
+let logosA = [];
+let idsA = [];
+let videosA = [];
+let photosA = [];
 
-/* ===== دالة ذكية: دمج JSON + الترقيم ===== */
-function buildSection(type, total, ext, dbArray = []) {
-  const result = [];
-  
-  for (let i = 1; i <= total; i++) {
-    const path = `/${type}-${i}.${ext}`;
+/* ================== FIRESTORE ================== */
+
+db.collection("projects")
+  .get()
+  .then((snapshot) => {
+    const fProjects = snapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data()
+    }));
     
-    const dbItem = dbArray.find((item) => item.path === path);
-    
-    result.push(
-      dbItem || {
-        path,
-        title: `${type.toUpperCase()} ${i}`,
-        brief: "",
-        review: "",
-        index:i
-      }
+    postsA = fProjects.filter(
+      (item) => item.section === "posts"
     );
-  }
-  
-  return result;
-}
-
-/* ================== FETCH JSON ================== */
-
-let videosAa =[]
-fetch("/projects.json")
-  .then((res) => res.json())
-  .then((data) => {
-    videosAa = data.videos
-    let sizes = data.sizes
-    postsA = buildSection
-    ("posts", sizes.posts, "jpg", data.posts || []);
-    logosA = buildSection
-    ("logos", sizes.logos, "jpg", data.logos || []);
-    photosA = buildSection
-    ("photos", sizes.photos, "jpg", data.photos || []);
-    idsA = buildSection
-    ("ids", sizes.ids, "jpg", data.ids || []);
-    videosA = buildSection
-  ("videos", sizes.videos, "mp4", data.ids || []);; // لا يوجد حالياً
     
-    mainProjects = [
-      ...postsA.slice(0, 4),
-      ...logosA.slice(0, 2)
-    ];
+    logosA = fProjects.filter(
+      (item) => item.section === "logos"
+    );
+    
+    photosA = fProjects.filter(
+      (item) => item.section === "photos"
+    );
+    
+    videosA = fProjects.filter(
+      (item) => item.section === "videos"
+    );
+    
+    idsA = fProjects.filter(
+      (item) => item.section === "ids"
+    );
+    
+    mainProjects = fProjects.filter(
+      (item) => item.isMain
+    );
     
     renderSection(mainProjects);
   })
-  .catch((err) => console.error("JSON Error:", err));
+  .catch((err) => {
+    console.error(err);
+  });
 
 /* ================== RENDER ================== */
 function renderSection(arr) {
@@ -211,21 +213,29 @@ function renderSection(arr) {
     div.className = "portfolio-item";
     
     div.onclick = () =>
-      openModal(item.path, item.title, item.brief, item.review, arr);
+      openModal(
+        item.url,
+        item.title,
+        item.brief,
+        item.review,
+        arr
+      );
     
-    if (item.path.endsWith(".mp4")) {
+    if (item.type === "video") {
       const video = document.createElement("video");
-      video.src = videosAa[item.index-1];
-      console.log(videosAa[item.index-1])
       
+      video.src = item.url;
       video.muted = true;
       video.loop = true;
       video.autoplay = true;
+      
       div.appendChild(video);
     } else {
       const img = document.createElement("img");
-      img.src = item.path;
+      
+      img.src = item.url;
       img.alt = item.title || "";
+      
       div.appendChild(img);
     }
     
@@ -233,8 +243,9 @@ function renderSection(arr) {
   });
 }
 
+
 }
 
 function closeModal() {
-  document.getElementById("modal").style.display ="none"
+  document.getElementById("modal").style.display = "none";
 }

@@ -61,6 +61,7 @@ body.dark-mode .surface {
   top: 0;
   z-index: 100;
   padding: 1rem 20px;
+  
   background-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid #eee;
@@ -75,10 +76,10 @@ body.dark-mode .header {
   background-color: rgba(24, 25, 26, 0.85);
   border-bottom: 1px solid #333;
 }
-.header .container{
+.header .container {
   display: flex;
-  justify-content: space-between;
-  gap: 40vw;
+  justify-content: flex-start;
+  gap: 40px;
   padding: 0;
 }
 .controls button{
@@ -476,4 +477,13 @@ body.dark-mode .social-links a{color:#aaa;}
 }
 .dev:hover{
   color:#E43559;
+}
+#id{
+  color:#C6C8DB;
+  font-size: 10px;
+}
+#modal-brief,
+#modal-review,
+#modal-title {
+  white-space: pre-line;
 }
